@@ -14,7 +14,48 @@
     </table>
   </body>
   <script>
-      
-    document.getElementById("td_N").textContent = "B1";
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+    
+    function FisherYatesShuffle(array)
+    {
+        var n = array.length 
+        for (var i = n - 1; i > 0; i--)
+        { 
+            // Pick a random index 
+            // from 0 to i 
+            var j = getRndInteger(0, i); 
+              
+            // Swap arr[i] with the 
+            // element at random index 
+            var temp = arr[i]; 
+            arr[i] = arr[j]; 
+            arr[j] = temp; 
+        } 
+    }
+    var tiles = [1,2,3,4,5,6,7,8,9,10,11];
+    FisherYatesShuffle(tiles);
+    var colors = ["B","R","Y","G"];
+    FisherYatesShuffle(colors);
+    
+    document.getElementById("td_N").textContent = colors[0]+getRndInteger(1,2);
+    document.getElementById("td_E").textContent = colors[1]+getRndInteger(1,2);
+    document.getElementById("td_W").textContent = colors[2]+getRndInteger(1,2);
+    document.getElementById("td_S").textContent = colors[3]+getRndInteger(1,2);
+    
+    document.getElementById("td_1").textContent = tiles[1-1];
+    document.getElementById("td_2").textContent = tiles[2-1];
+    document.getElementById("td_3").textContent = tiles[3-1];
+    document.getElementById("td_4").textContent = tiles[4-1];
+    document.getElementById("td_5").textContent = tiles[5-1];
+    document.getElementById("td_6").textContent = tiles[6-1];
+    document.getElementById("td_7").textContent = tiles[7-1];
+    document.getElementById("td_8").textContent = tiles[8-1];
+    document.getElementById("td_9").textContent = tiles[9-1];
+    document.getElementById("td_10").textContent = tiles[10-1];
+    document.getElementById("td_11").textContent = tiles[11-1];
+    document.getElementById("td_12").textContent = tiles[12-1];
+    
   </script>
 </html>
